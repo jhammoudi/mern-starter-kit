@@ -1,0 +1,21 @@
+{
+  "name": "mern-starter-kit",
+  "version": "1.0.0",
+  "description": "A starter web app, built using MongoDB, Express js, React js, Node js",
+  "main": "server.js",
+  "author": "Jihad Hammoudi",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.7"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "prod-install": "npm install && cd client && npm install",
+    "build": "cd client && npm run build",
+    "prod": "npm run build && npm start"
+  },
+  "devDependencies": {}
+}
