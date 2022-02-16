@@ -7,11 +7,16 @@ const port = process.env.PORT || 5001;
 app.use(cors());
 app.use(express.json());
 
-const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, {
-    useNewUrlParser: true,
-    useCreateIndex: true
-});
+const mongoUser = "csc648";
+const mongoPassword = "CSC.M3ntalHealth";
+const dbName = "cluster0";
+const uri = "mongodb+srv://" + 
+                mongoUser + ":" + 
+                mongoPassword + "@" + 
+                dbName + ".wuqpj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+mongoose.connect(uri, 
+    {useNewUrlParser: true, useUnifiedTopology: true}
+    );
 const connection = mongoose.connection;
 connection.once('open', () => {
     console.log("MongoDB database connection established successfully");
